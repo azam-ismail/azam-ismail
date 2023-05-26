@@ -1,0 +1,139 @@
+{
+    "label": "Flow 4",
+    "nodes": [
+        {
+            "id": "affbeb542fcff61b1.9",
+            "type": "inject",
+            "z": "3cddc181b9506568",
+            "name": "",
+            "props": [
+                {
+                    "p": "payload"
+                },
+                {
+                    "p": "topic",
+                    "vt": "str"
+                }
+            ],
+            "repeat": "5",
+            "crontab": "",
+            "once": true,
+            "onceDelay": 0.1,
+            "topic": "",
+            "payload": "",
+            "payloadType": "date",
+            "x": 140,
+            "y": 220,
+            "wires": [["55413f70c72060cd1.9"]]
+        },
+        {
+            "id": "55413f70c72060cd1.9",
+            "type": "debug",
+            "z": "3cddc181b9506568",
+            "name": "",
+            "active": true,
+            "tosidebar": true,
+            "console": true,
+            "tostatus": false,
+            "complete": "payload",
+            "targetType": "msg",
+            "statusVal": "",
+            "statusType": "auto",
+            "x": 310,
+            "y": 220,
+            "wires": []
+        },
+        {
+            "id": "403ffaa05ee12a9f",
+            "type": "inject",
+            "z": "3cddc181b9506568",
+            "name": "",
+            "props": [
+                {
+                    "p": "payload"
+                },
+                {
+                    "p": "topic",
+                    "vt": "str"
+                }
+            ],
+            "repeat": "",
+            "crontab": "",
+            "once": false,
+            "onceDelay": 0.1,
+            "topic": "",
+            "payload": "",
+            "payloadType": "date",
+            "x": 200,
+            "y": 360,
+            "wires": [["71f75b07b2b6299a"]]
+        },
+        {
+            "id": "71f75b07b2b6299a",
+            "type": "template",
+            "z": "3cddc181b9506568",
+            "name": "JSON string",
+            "field": "payload",
+            "fieldType": "msg",
+            "format": "json",
+            "syntax": "plain",
+            "template": "{\n    \"kind\": \"Apple\",\n    \"price\": 100,\n    \"origin\": \"Canada\"\n}",
+            "output": "str",
+            "x": 370,
+            "y": 360,
+            "wires": [["638011a878436a87"]]
+        },
+        {
+            "id": "052ffebd6fe60312",
+            "type": "debug",
+            "z": "3cddc181b9506568",
+            "name": "",
+            "active": true,
+            "tosidebar": true,
+            "console": false,
+            "tostatus": false,
+            "complete": "false",
+            "statusVal": "",
+            "statusType": "auto",
+            "x": 690,
+            "y": 360,
+            "wires": []
+        },
+        {
+            "id": "638011a878436a87",
+            "type": "json",
+            "z": "3cddc181b9506568",
+            "name": "",
+            "property": "payload",
+            "action": "",
+            "pretty": false,
+            "x": 530,
+            "y": 360,
+            "wires": [["052ffebd6fe60312", "ece3e70a02594172"]]
+        },
+        {
+            "id": "ac3cc8838b25ac85",
+            "type": "http in",
+            "z": "3cddc181b9506568",
+            "name": "",
+            "url": "/test",
+            "method": "get",
+            "upload": false,
+            "swaggerDoc": "",
+            "x": 120,
+            "y": 460,
+            "wires": [["71f75b07b2b6299a"]]
+        },
+        {
+            "id": "ece3e70a02594172",
+            "type": "http response",
+            "z": "3cddc181b9506568",
+            "name": "",
+            "statusCode": "",
+            "headers": {},
+            "x": 890,
+            "y": 460,
+            "wires": []
+        }
+    ]
+}

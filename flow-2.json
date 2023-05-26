@@ -1,0 +1,45 @@
+{
+  "label": "Flow 4",
+  "nodes": [
+    {
+      "id": "affbeb542fcff61b1.2",
+      "type": "inject",
+      "name": "",
+      "props": [
+        {
+          "p": "payload"
+        },
+        {
+          "p": "topic",
+          "vt": "str"
+        }
+      ],
+      "repeat": "5",
+      "crontab": "",
+      "once": true,
+      "onceDelay": 0.1,
+      "topic": "",
+      "payload": "",
+      "payloadType": "date",
+      "x": 140,
+      "y": 220,
+      "wires": [["55413f70c72060cd1.2"]]
+    },
+    {
+      "id": "55413f70c72060cd1.2",
+      "type": "debug",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": true,
+      "tostatus": false,
+      "complete": "payload",
+      "targetType": "msg",
+      "statusVal": "",
+      "statusType": "auto",
+      "x": 310,
+      "y": 220,
+      "wires": []
+    }
+  ]
+}
