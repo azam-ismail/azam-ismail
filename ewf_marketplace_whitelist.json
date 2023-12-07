@@ -1,0 +1,11 @@
+{
+	"show": {
+		"solutionGroups": [
+			"digitalspine",
+			"safc"
+		]
+	},
+	"hide": {
+		"solutionGroups": []
+	}
+}
